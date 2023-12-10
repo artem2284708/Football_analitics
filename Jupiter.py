@@ -25,8 +25,6 @@ df_current_players
 Here we are applying League, it will be toUpperCase() in html.
 """
 
-liga = input()
-
 df_current_league_players = df_current_players.loc[df_current_players['current_club_domestic_competition_id'] == f'{liga}']
 
 df_current_league_players.info()
