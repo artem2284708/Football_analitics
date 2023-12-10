@@ -17,7 +17,7 @@ club_games = pd.read_csv("Football Data/club_games.csv")
 Unpacking datasets with information about players of
 the current year
 """
-liga = 'RU1"
+liga = 'RU1'
 df_current_players = df_players.loc[df_players['last_season'] == 2023]
 df_current_players
 
