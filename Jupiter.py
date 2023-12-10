@@ -64,7 +64,7 @@ sns.stripplot(df_current_league_players, x='age', y='market_value_in_eur',
 
 plt.legend(bbox_to_anchor=(1.02, 1), loc='upper left', borderaxespad=0)
 
-st.pyplt(plt)
+st.pyplot(plt)
 
 sns.barplot(df_current_league_players, x='age', y='market_value_in_eur').set(title=f'Relation between transfer value and age in {liga}')
 
