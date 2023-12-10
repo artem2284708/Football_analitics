@@ -66,9 +66,9 @@ plt.legend(bbox_to_anchor=(1.02, 1), loc='upper left', borderaxespad=0)
 
 st.pyplot(plt)
 
-dat = sns.barplot(df_current_league_players, x='age', y='market_value_in_eur').set(title=f'Relation between transfer value and age in {liga}')
+sns.barplot(df_current_league_players, x='age', y='market_value_in_eur').set(title=f'Relation between transfer value and age in {liga}')
 
-st.pyplot(dat)
+st.pyplot(plt)
 
 """It's just an interesting fact (I can create plots)
 
@@ -93,7 +93,7 @@ fig = px.bar(league_overview_1, x='current_club_name', y='market_value_in_eur',
 fig.update_xaxes(categoryorder='total descending', tickangle=-45)
 
 
-st.pyplot(fig)
+st.pyplot(plt)
 
 """I unpacking a new dataset with **in-season** matches. Also I immediately applying current year"""
 
@@ -249,7 +249,7 @@ if liga == 'RU1':
   ab = offsetbox.AnnotationBbox(imagebox, (16, 100.500), frameon=False)
   ax.add_artist(ab)
 
-st.pyplot(fig)
+st.pyplot(plt)
 
 """---
 Open new file to merge cool data
@@ -268,7 +268,7 @@ data
 
 sns.heatmap(data.corr(numeric_only=True),  annot=True)
 
-st.pyplot(fig)
+st.pyplot(plt)
 
 def desc(lig):
   if lig == "RU1":
