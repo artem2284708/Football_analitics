@@ -166,7 +166,7 @@ all_data1 = all_data
 index_labels = (a for a in range(len(league_overview_1['current_club_name']), 0, -1))
 all_data1.index = index_labels
 
-img = plt.imread('Lines_On_A_Football_Pitch.jpg')
+img = plt.imread('Football Data/Lines_On_A_Football_Pitch.jpg')
 fig, ax  = plt.subplots()
 ax.imshow(img, extent=[0, len(league_overview_1['current_club_name']) + 1, 0, max(all_data['market_value_in_eur'])+(max(all_data['market_value_in_eur']) * 0.05)], aspect='auto', zorder=-1)
 sns.scatterplot(data=all_data, x=all_data.index, y='market_value_in_eur',
@@ -176,67 +176,67 @@ plt.xlabel('place (in reverse order)')
 plt.legend(bbox_to_anchor=(1.02, 1), loc='upper left', borderaxespad=0)
 
 if liga == 'RU1':
-  imagebox = offsetbox.OffsetImage(plt.imread('Sochi.png'), zoom=0.1)
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/Sochi.png'), zoom=0.1)
   ab = offsetbox.AnnotationBbox(imagebox, (1, 33.200), frameon=False)
   ax.add_artist(ab)
 
-  imagebox = offsetbox.OffsetImage(plt.imread('akhmat.png'), zoom=0.1)
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/akhmat.png'), zoom=0.1)
   ab = offsetbox.AnnotationBbox(imagebox, (3, 40.450), frameon=False)
   ax.add_artist(ab)
 
-  imagebox = offsetbox.OffsetImage(plt.imread('Baltika.png'), zoom=0.1)
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/Baltika.png'), zoom=0.1)
   ab = offsetbox.AnnotationBbox(imagebox, (2, 26.450), frameon=False)
   ax.add_artist(ab)
 
-  imagebox = offsetbox.OffsetImage(plt.imread('Orenburg.png'), zoom=0.1)
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/Orenburg.png'), zoom=0.1)
   ab = offsetbox.AnnotationBbox(imagebox, (4, 33.650), frameon=False)
   ax.add_artist(ab)
 
-  imagebox = offsetbox.OffsetImage(plt.imread('Ural.png'), zoom=0.1)
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/Ural.png'), zoom=0.1)
   ab = offsetbox.AnnotationBbox(imagebox, (5, 29.850), frameon=False)
   ax.add_artist(ab)
 
-  imagebox = offsetbox.OffsetImage(plt.imread('Rostov.png'), zoom=0.1)
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/Rostov.png'), zoom=0.1)
   ab = offsetbox.AnnotationBbox(imagebox, (6, 56.600), frameon=False)
   ax.add_artist(ab)
 
-  imagebox = offsetbox.OffsetImage(plt.imread('Fakel.png'), zoom=0.1)
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/Fakel.png'), zoom=0.1)
   ab = offsetbox.AnnotationBbox(imagebox, (7, 21.000), frameon=False)
   ax.add_artist(ab)
 
-  imagebox = offsetbox.OffsetImage(plt.imread('NN.png'), zoom=0.1)
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/NN.png'), zoom=0.1)
   ab = offsetbox.AnnotationBbox(imagebox, (8, 26.225), frameon=False)
   ax.add_artist(ab)
 
-  imagebox = offsetbox.OffsetImage(plt.imread('Rubin.png'), zoom=0.1)
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/Rubin.png'), zoom=0.1)
   ab = offsetbox.AnnotationBbox(imagebox, (9, 35.200), frameon=False)
   ax.add_artist(ab)
 
-  imagebox = offsetbox.OffsetImage(plt.imread('Spartak.png'), zoom=0.1)
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/Spartak.png'), zoom=0.1)
   ab = offsetbox.AnnotationBbox(imagebox, (10, 106.100), frameon=False)
   ax.add_artist(ab)
 
-  imagebox = offsetbox.OffsetImage(plt.imread('Loko.png'), zoom=0.1)
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/Loko.png'), zoom=0.1)
   ab = offsetbox.AnnotationBbox(imagebox, (11, 86.550), frameon=False)
   ax.add_artist(ab)
 
-  imagebox = offsetbox.OffsetImage(plt.imread('KK.png'), zoom=0.1)
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/KK.png'), zoom=0.1)
   ab = offsetbox.AnnotationBbox(imagebox, (12, 47.550), frameon=False)
   ax.add_artist(ab)
 
-  imagebox = offsetbox.OffsetImage(plt.imread('Dinamo.png'), zoom=0.1)
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/Dinamo.png'), zoom=0.1)
   ab = offsetbox.AnnotationBbox(imagebox, (13, 92.500), frameon=False)
   ax.add_artist(ab)
 
-  imagebox = offsetbox.OffsetImage(plt.imread('CSKA.png'), zoom=0.1)
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/CSKA.png'), zoom=0.1)
   ab = offsetbox.AnnotationBbox(imagebox, (14, 87.100), frameon=False)
   ax.add_artist(ab)
 
-  imagebox = offsetbox.OffsetImage(plt.imread('zenit.png'), zoom=0.1)
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/zenit.png'), zoom=0.1)
   ab = offsetbox.AnnotationBbox(imagebox, (15, 145.100), frameon=False)
   ax.add_artist(ab)
 
-  imagebox = offsetbox.OffsetImage(plt.imread('Krasnodar.png'), zoom=0.1)
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/Krasnodar.png'), zoom=0.1)
   ab = offsetbox.AnnotationBbox(imagebox, (16, 100.500), frameon=False)
   ax.add_artist(ab)
 
