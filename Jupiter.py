@@ -249,7 +249,7 @@ if liga == 'RU1':
   ab = offsetbox.AnnotationBbox(imagebox, (16, 100.500), frameon=False)
   ax.add_artist(ab)
 
-st.scatter_chart(plt)
+st.scatter_chart(fig)
 
 """---
 Open new file to merge cool data
