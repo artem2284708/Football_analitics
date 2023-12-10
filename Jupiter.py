@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import streamlit as st
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import seaborn as sns
@@ -17,8 +18,6 @@ club_games = pd.read_csv("Football Data/club_games.csv")
 Unpacking datasets with information about players of
 the current year
 """
-
-plot = sns.pairplot(df)
 
 liga = 'RU1'
 df_current_players = df_players.loc[df_players['last_season'] == 2023]
@@ -60,16 +59,16 @@ df_current_league_players['market_value_in_eur'] = df_current_league_players['ma
 
 """---"""
 
-sns.stripplot(df_current_league_players, x='age', y='market_value_in_eur',
+fig = sns.stripplot(df_current_league_players, x='age', y='market_value_in_eur',
                   hue='current_club_name', palette='Paired')
 
 plt.legend(bbox_to_anchor=(1.02, 1), loc='upper left', borderaxespad=0)
 
 st.pyplot(fig)
 
-sns.barplot(df_current_league_players, x='age', y='market_value_in_eur').set(title=f'Relation between transfer value and age in {liga}')
+dat = sns.barplot(df_current_league_players, x='age', y='market_value_in_eur').set(title=f'Relation between transfer value and age in {liga}')
 
-st.pyplot(fig)
+st.pyplot(dat)
 
 """It's just an interesting fact (I can create plots)
 
