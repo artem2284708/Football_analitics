@@ -17,6 +17,9 @@ club_games = pd.read_csv("Football Data/club_games.csv")
 Unpacking datasets with information about players of
 the current year
 """
+
+plot = sns.pairplot(df)
+
 liga = 'RU1'
 df_current_players = df_players.loc[df_players['last_season'] == 2023]
 df_current_players
@@ -62,7 +65,11 @@ sns.stripplot(df_current_league_players, x='age', y='market_value_in_eur',
 
 plt.legend(bbox_to_anchor=(1.02, 1), loc='upper left', borderaxespad=0)
 
+st.pyplot(fig)
+
 sns.barplot(df_current_league_players, x='age', y='market_value_in_eur').set(title=f'Relation between transfer value and age in {liga}')
+
+st.pyplot(fig)
 
 """It's just an interesting fact (I can create plots)
 
@@ -85,6 +92,9 @@ fig = px.bar(league_overview_1, x='current_club_name', y='market_value_in_eur',
              color='market_value_in_eur'
             )
 fig.update_xaxes(categoryorder='total descending', tickangle=-45)
+
+
+st.pyplot(fig)
 
 """I unpacking a new dataset with **in-season** matches. Also I immediately applying current year"""
 
@@ -240,6 +250,8 @@ if liga == 'RU1':
   ab = offsetbox.AnnotationBbox(imagebox, (16, 100.500), frameon=False)
   ax.add_artist(ab)
 
+st.pyplot(fig)
+
 """---
 Open new file to merge cool data
 """
@@ -256,6 +268,8 @@ data = data[["name", 'squad_size', 'average_age', 'foreigners_percentage', 'nati
 data
 
 sns.heatmap(data.corr(numeric_only=True),  annot=True)
+
+st.pyplot(fig)
 
 def desc(lig):
   if lig == "RU1":
