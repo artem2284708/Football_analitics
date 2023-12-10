@@ -68,7 +68,7 @@ st.pyplot(plt)
 
 sns.barplot(df_current_league_players, x='age', y='market_value_in_eur')
 plt.title(f'Relation between transfer value and age in {liga}')
-st.plotly_chart(plt)
+st.pyplot(plt)
 
 """It's just an interesting fact (I can create plots)
 
@@ -178,7 +178,7 @@ all_data1.index = index_labels
 img = plt.imread('Football Data/Lines_On_A_Football_Pitch.jpg')
 fig, ax  = plt.subplots()
 ax.imshow(img, extent=[0, len(league_overview_1['current_club_name']) + 1, 0, max(all_data['market_value_in_eur'])+(max(all_data['market_value_in_eur']) * 0.05)], aspect='auto', zorder=-1)
-sns.scatterplot(data=all_data, x=all_data.index, y='market_value_in_eur',
+chart_data = sns.scatterplot(data=all_data, x=all_data.index, y='market_value_in_eur',
                   hue='name', palette= 'bright'
             )
 plt.xlabel('place (in reverse order)')
@@ -268,7 +268,7 @@ data
 
 sns.heatmap(data.corr(numeric_only=True),  annot=True)
 
-st.pyplot(plt)
+st.scatter_chart(chart_data)
 
 def desc(lig):
   if lig == "RU1":
