@@ -39,7 +39,7 @@ df_current_league_players.info()
 With using datetime for constant updating of the information
 """
 
-df_current_league_players['date_of_birth'] = pd.to_datetime(df_current_league_players['date_of_birth'])
+df_current_league_players.loc[df_current_league_players['date_of_birth']] = pd.to_datetime(df_current_league_players['date_of_birth'])
 
 current_year = datetime.now().year
 
