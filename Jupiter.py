@@ -66,8 +66,8 @@ plt.legend(bbox_to_anchor=(1.02, 1), loc='upper left', borderaxespad=0)
 
 st.pyplot(plt)
 
-sns.barplot(df_current_league_players, x='age', y='market_value_in_eur').set(title=f'Relation between transfer value and age in {liga}')
-
+sns.barplot(df_current_league_players, x='age', y='market_value_in_eur')
+plt.title(f'Relation between transfer value and age in {liga}')
 st.plotly_chart(plt)
 
 """It's just an interesting fact (I can create plots)
