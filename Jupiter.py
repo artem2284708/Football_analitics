@@ -187,7 +187,7 @@ plt.legend(bbox_to_anchor=(1.02, 1), loc='upper left', borderaxespad=0)
 figure = chart_data.get_figure()
 
 # Convert Matplotlib figure to Plotly figure
-figure_plotly = px.mpl_to_plotly(figure)
+figure_plotly = tls.mpl_to_plotly(figure)
 
 # Load and add images using layout images
 images = [
