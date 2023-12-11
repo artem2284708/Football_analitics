@@ -184,6 +184,7 @@ chart_data = sns.scatterplot(data=all_data, x=all_data.index, y='market_value_in
             )
 plt.xlabel('place (in reverse order)')
 plt.legend(bbox_to_anchor=(1.02, 1), loc='upper left', borderaxespad=0)
+figure = chart_data.get_figure()
 
 if liga == 'RU1':
   imagebox = offsetbox.OffsetImage(plt.imread('Football Data/Sochi.png'), zoom=0.1)
@@ -250,8 +251,8 @@ if liga == 'RU1':
   ab = offsetbox.AnnotationBbox(imagebox, (16, 100.500), frameon=False)
   ax.add_artist(ab)
   
-chart_data_plotly = tls.mpl_to_plotly(chart_data)
-st.plotly_chart(chart_data_plotly)
+figure_plotly = tls.mpl_to_plotly(figure)
+st.plotly_chart(figure_plotly)
 
 """---
 Open new file to merge cool data
