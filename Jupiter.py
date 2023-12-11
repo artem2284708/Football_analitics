@@ -179,36 +179,80 @@ all_data1.index = index_labels
 img = plt.imread('Football Data/Lines_On_A_Football_Pitch.jpg')
 fig, ax  = plt.subplots()
 ax.imshow(img, extent=[0, len(league_overview_1['current_club_name']) + 1, 0, max(all_data['market_value_in_eur'])+(max(all_data['market_value_in_eur']) * 0.05)], aspect='auto', zorder=-1)
-
-chart_data = sns.scatterplot(data=all_data, x=all_data.index, y='market_value_in_eur', hue='index', palette='bright')
+chart_data = sns.scatterplot(data=all_data, x=all_data.index, y='market_value_in_eur',
+                  hue='index', palette= 'bright'
+            )
 plt.xlabel('place (in reverse order)')
 plt.legend(bbox_to_anchor=(1.02, 1), loc='upper left', borderaxespad=0)
-# Extract the Matplotlib figure
+
+
+if liga == 'RU1':
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/Sochi.png'), zoom=0.1)
+  ab = offsetbox.AnnotationBbox(imagebox, (1, 33.200), frameon=False)
+  ax.add_artist(ab)
+
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/akhmat.png'), zoom=0.1)
+  ab = offsetbox.AnnotationBbox(imagebox, (3, 40.450), frameon=False)
+  ax.add_artist(ab)
+
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/Baltika.png'), zoom=0.1)
+  ab = offsetbox.AnnotationBbox(imagebox, (2, 26.450), frameon=False)
+  ax.add_artist(ab)
+
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/Orenburg.png'), zoom=0.1)
+  ab = offsetbox.AnnotationBbox(imagebox, (4, 33.650), frameon=False)
+  ax.add_artist(ab)
+
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/Ural.png'), zoom=0.1)
+  ab = offsetbox.AnnotationBbox(imagebox, (5, 29.850), frameon=False)
+  ax.add_artist(ab)
+
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/Rostov.png'), zoom=0.1)
+  ab = offsetbox.AnnotationBbox(imagebox, (6, 56.600), frameon=False)
+  ax.add_artist(ab)
+
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/Fakel.png'), zoom=0.1)
+  ab = offsetbox.AnnotationBbox(imagebox, (7, 21.000), frameon=False)
+  ax.add_artist(ab)
+
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/NN.png'), zoom=0.1)
+  ab = offsetbox.AnnotationBbox(imagebox, (8, 26.225), frameon=False)
+  ax.add_artist(ab)
+
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/Rubin.png'), zoom=0.1)
+  ab = offsetbox.AnnotationBbox(imagebox, (9, 35.200), frameon=False)
+  ax.add_artist(ab)
+
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/Spartak.png'), zoom=0.1)
+  ab = offsetbox.AnnotationBbox(imagebox, (10, 106.100), frameon=False)
+  ax.add_artist(ab)
+
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/Loko.png'), zoom=0.1)
+  ab = offsetbox.AnnotationBbox(imagebox, (11, 86.550), frameon=False)
+  ax.add_artist(ab)
+
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/KK.png'), zoom=0.1)
+  ab = offsetbox.AnnotationBbox(imagebox, (12, 47.550), frameon=False)
+  ax.add_artist(ab)
+
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/Dinamo.png'), zoom=0.1)
+  ab = offsetbox.AnnotationBbox(imagebox, (13, 92.500), frameon=False)
+  ax.add_artist(ab)
+
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/CSKA.png'), zoom=0.1)
+  ab = offsetbox.AnnotationBbox(imagebox, (14, 87.100), frameon=False)
+  ax.add_artist(ab)
+
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/zenit.png'), zoom=0.1)
+  ab = offsetbox.AnnotationBbox(imagebox, (15, 145.100), frameon=False)
+  ax.add_artist(ab)
+
+  imagebox = offsetbox.OffsetImage(plt.imread('Football Data/Krasnodar.png'), zoom=0.1)
+  ab = offsetbox.AnnotationBbox(imagebox, (16, 100.500), frameon=False)
+  ax.add_artist(ab)
+
 figure = chart_data.get_figure()
-
-# Convert Matplotlib figure to Plotly figure
 figure_plotly = tls.mpl_to_plotly(figure)
-
-# Load and add images using layout images
-images = [
-    {'source': 'Football Data/Sochi.png', 'x': 1, 'y': 33.200, 'sizex': 0.1, 'sizey': 0.1},
-    {'source': 'Football Data/akhmat.png', 'x': 3, 'y': 40.450, 'sizex': 0.1, 'sizey': 0.1},
-    # Add more images as needed
-]
-
-for img in images:
-    figure_plotly.add_layout_image(
-        source=img['source'],
-        x=img['x'],
-        y=img['y'],
-        sizex=img['sizex'],
-        sizey=img['sizey'],
-        opacity=1,
-        xanchor="left",
-        yanchor="bottom",
-    )
-
-# Display Plotly figure using st.plotly_chart
 st.plotly_chart(figure_plotly)
 
 """---
