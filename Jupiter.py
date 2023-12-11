@@ -179,8 +179,6 @@ all_data1.index = index_labels
 img = plt.imread('Football Data/Lines_On_A_Football_Pitch.jpg')
 fig, ax  = plt.subplots()
 ax.imshow(img, extent=[0, len(league_overview_1['current_club_name']) + 1, 0, max(all_data['market_value_in_eur'])+(max(all_data['market_value_in_eur']) * 0.05)], aspect='auto', zorder=-1)
-            )
-
 
 chart_data = sns.scatterplot(data=all_data, x=all_data.index, y='market_value_in_eur', hue='index', palette='bright')
 plt.xlabel('place (in reverse order)')
