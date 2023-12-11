@@ -181,7 +181,6 @@ ax.imshow(img, extent=[0, len(league_overview_1['current_club_name']) + 1, 0, ma
 chart_data = sns.scatterplot(data=all_data, x=all_data.index, y='market_value_in_eur',
                   hue='index', palette= 'bright'
             )
-chart_data_plotly = tls.mpl_to_plotly(chart_data)
 plt.xlabel('place (in reverse order)')
 plt.legend(bbox_to_anchor=(1.02, 1), loc='upper left', borderaxespad=0)
 
@@ -249,7 +248,8 @@ if liga == 'RU1':
   imagebox = offsetbox.OffsetImage(plt.imread('Football Data/Krasnodar.png'), zoom=0.1)
   ab = offsetbox.AnnotationBbox(imagebox, (16, 100.500), frameon=False)
   ax.add_artist(ab)
-
+  
+chart_data_plotly = tls.mpl_to_plotly(chart_data)
 st.plotly_chart(chart_data_plotly)
 
 """---
