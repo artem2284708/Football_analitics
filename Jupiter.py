@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import seaborn as sns
 import plotly.express as px
+import plotly.tools as tls
 from datetime import datetime
 from matplotlib import offsetbox
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
