@@ -164,7 +164,7 @@ league_standings
 """Add column of market value, make correct index."""
 
 all_data = pd.merge(league_standings, league_overview, left_index=True,right_index=True)
-all_data = all_data.reset_index(names='name')
+all_data = all_data.reset_index().rename(columns={'name': 'new_name'})
 index_labels = (a for a in range(1, len(league_overview_1['current_club_name'])+1))
 all_data.index = index_labels
 all_data
