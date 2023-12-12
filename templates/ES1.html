@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block name %}{{result}}{% endblock %}
+{% block body %}
+<div class="row my-4">
+    <div class="col align-items-stretch">
+        <div class="card mb-3 p-3" style="height: 40rem">
+            <div class="row g-0">
+                <center>
+                    <div class="card-body">
+                        <h4>Total Market Value</h4>
+                        <p>Here you can see transfer value by clubs</p>
+                        <img src="../static/grath/ES1.png" alt="plot_of_LaLiga">
+                    </div>
+                </center>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row my-4">
+    <div class="card mb-3 p-3">
+        <div class="row g-0">
+            <center>
+                <div class="col-md-4">
+                    <h4>Dependence between transfer value of the club and its current position</h4>
+                    <br/>
+                </div>
+                <img src="../static/Plots/ES1.png" alt="plot_of_LaLiga">
+            </center>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block overview %}
+<p>As can be seen, in LaLiga club points depend on Transfer value 🟠</p>
+<br />
+<h6>There're some other interesting facts for LaLiga:</h6>
+<p>1) Club points depend on number of players from national team in the squad 🟠</p>
+<p>2) The number of players from national team for each team depends on transfer value => national team players are often expensive ⭐</p>
+{% endblock %}
