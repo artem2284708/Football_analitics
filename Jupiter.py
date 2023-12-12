@@ -17,9 +17,6 @@ df_clubs = pd.read_csv('Data files/clubs.csv')
 club_games = pd.read_csv("Data files/club_games.csv")
 
 
-RPL = df_clubs.loc[df_clubs['domestic_competition_id'] == "RU1"]
-current_RPL = RPL.loc[RPL['last_season'] == 2023]
-
 matchdays = df_games[(df_games["round"].str.contains("Matchday"))]
 real_matchdays = matchdays.dropna(subset = 'aggregate')
 RPL_matchdays = real_matchdays[real_matchdays['competition_id'] == 'RU1']
