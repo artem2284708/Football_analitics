@@ -23,7 +23,7 @@ league_overview = df_current_league_players.pivot_table(index='current_club_name
 league_overview_1 = league_overview.reset_index('current_club_name')
 
 fig = px.bar(league_overview_1, x='current_club_name', y='market_value_in_eur',
-             title=f'Total Market Value of {liga}',
+             title='Total Market Value of RPL',
              color='market_value_in_eur'
             )
 fig.update_xaxes(categoryorder='total descending', tickangle=-45)
