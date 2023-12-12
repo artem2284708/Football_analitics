@@ -16,6 +16,16 @@ df_games = pd.read_csv('Data files/games.csv')
 df_clubs = pd.read_csv('Data files/clubs.csv')
 club_games = pd.read_csv("Data files/club_games.csv")
 
+df_current_league_players = df_current_players.loc[df_current_players['current_club_domestic_competition_id'] == 'RU1']
+league_overview = df_current_league_players.pivot_table(index='current_club_name',  values=['market_value_in_eur'], aggfunc=sum).sort_values(by='market_value_in_eur', ascending=False)
+league_overview_1 = league_overview.reset_index('current_club_name')
+
+fig = px.bar(league_overview_1, x='current_club_name', y='market_value_in_eur',
+             title=f'Total Market Value of {liga}',
+             color='market_value_in_eur'
+            )
+fig.update_xaxes(categoryorder='total descending', tickangle=-45)
+
 
 matchdays = df_games[(df_games["round"].str.contains("Matchday"))]
 RPL_matchdays = matchdays[matchdays['competition_id'] == 'RU1']
