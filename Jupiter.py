@@ -33,6 +33,6 @@ club_seasons = pd.merge(df_clubs[['club_id', 'name']], club_seasons)
 
 standings = club_seasons.pivot_table(index = 'name', values = 'points').sort_values(by = "points", ascending=False)
 standings.reset_index()
-index_labels = (a for a in range(1, len(standings['name'])+1))
+index_labels = (a for a in range(1, len(standings.index)+1))
 standings.index = index_labels
 standings
