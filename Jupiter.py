@@ -16,7 +16,7 @@ df_players = pd.read_csv('Data files/games.csv')
 df_clubs = pd.read_csv('Data files/clubs.csv')
 club_games = pd.read_csv("Data files/club_games.csv")
 
-
+df_games.columns
 matchdays = df_games[(df_games["round"].str.contains("Matchday"))]
 real_matchdays = matchdays.dropna(subset = 'aggregate')
 RPL_matchdays = real_matchdays[real_matchdays['competition_id'] == 'RU1']
