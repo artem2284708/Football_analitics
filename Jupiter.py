@@ -31,8 +31,8 @@ club_seasons = club_games.groupby(["club_id", "season"], as_index=False)[['point
 club_seasons = club_seasons.loc[club_seasons['season'] == 2023]
 club_seasons = pd.merge(df_clubs[['club_id', 'name']], club_seasons)
 
-standings = club_seasons.pivot_table(values = ["name",'points']).sort_values(by = "points", ascending=False)
-standings = standings.reset_index(names='name')
+standings = club_seasons.pivot_table(values=['name', 'points']).sort_values(by='points', ascending=False)
+
 index_labels = (a for a in range(1, len(standings.index)+1))
 standings.index = index_labels
 standings
