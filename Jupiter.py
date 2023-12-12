@@ -13,7 +13,7 @@ from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 
 df_games = pd.read_csv('Football_analitics/Data files/games.csv')
 df_players = pd.read_csv('Football_analitics/Data files/players.csv')
-df_clubs = pd.read_csv('Football_analititcs/Data files/clubs.csv')
+df_clubs = pd.read_csv('Football_analitics/Data files/clubs.csv')
 club_games = pd.read_csv("Football_analitics/Data files/club_games.csv")
 
 
