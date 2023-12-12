@@ -16,6 +16,8 @@ df_games = pd.read_csv('Data files/games.csv')
 df_clubs = pd.read_csv('Data files/clubs.csv')
 club_games = pd.read_csv("Data files/club_games.csv")
 
+
+df_current_players = df_players.loc[df_players['last_season'] == 2023]
 df_current_league_players = df_current_players.loc[df_current_players['current_club_domestic_competition_id'] == 'RU1']
 league_overview = df_current_league_players.pivot_table(index='current_club_name',  values=['market_value_in_eur'], aggfunc=sum).sort_values(by='market_value_in_eur', ascending=False)
 league_overview_1 = league_overview.reset_index('current_club_name')
