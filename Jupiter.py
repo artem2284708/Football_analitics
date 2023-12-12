@@ -8,8 +8,22 @@ df_games = pd.read_csv('Data files/games.csv')
 df_clubs = pd.read_csv('Data files/clubs.csv')
 club_games = pd.read_csv("Data files/club_games.csv")
 
+
+df_current_players = df_players.loc[df_players['last_season'] == 2023]
+df_current_league_players = df_current_players.loc[df_current_players['current_club_domestic_competition_id'] == 'RU1']
+league_overview = df_current_league_players.pivot_table(index='current_club_name',  values=['market_value_in_eur'], aggfunc=sum).sort_values(by='market_value_in_eur', ascending=False)
+league_overview_1 = league_overview.reset_index('current_club_name')
+
+fig = px.bar(league_overview_1, x='current_club_name', y='market_value_in_eur',
+             title='Total Market Value of RPL',
+             color='market_value_in_eur'
+            )
+fig.update_xaxes(categoryorder='total descending', tickangle=-45)
+st.plotly_chart(fig)
+
+
 matchdays = df_games[(df_games["round"].str.contains("Matchday"))]
-RPL_matchdays = matchdays[matchdays['competition_id'] == 'ES1']
+RPL_matchdays = matchdays[matchdays['competition_id'] == 'RU1']
 
 club_games.loc[club_games['own_goals'] == club_games['opponent_goals'], 'is_win'] = 2
 club_games = club_games[["game_id", "club_id", "is_win"]]
@@ -31,7 +45,5 @@ club_seasons = club_games.groupby(["club_id", "season"], as_index=False)[['point
 club_seasons = club_seasons.loc[club_seasons['season'] == 2023]
 club_seasons = pd.merge(df_clubs[['club_id', 'name']], club_seasons)
 
-standings = club_seasons.drop(columns=['club_id', 'season']).sort_values(by='points', ascending=False)
-index_labels = (a for a in range(1, len(standings.index)+1))
-standings.index = index_labels
-standings
+RPL_standings = club_seasons.pivot_table(index = 'name', values = 'points').sort_values(by = "points", ascending=False)
+RPL_standings
