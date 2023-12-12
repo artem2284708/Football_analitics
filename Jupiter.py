@@ -24,7 +24,7 @@ st.plotly_chart(fig)
 
 
 matchdays = df_games[(df_games["round"].str.contains("Matchday"))]
-RPL_matchdays = matchdays[matchdays['competition_id'] == 'ES1']
+RPL_matchdays = matchdays[matchdays['competition_id'] == 'RU1']
 
 club_games.loc[club_games['own_goals'] == club_games['opponent_goals'], 'is_win'] = 2
 club_games = club_games[["game_id", "club_id", "is_win"]]
