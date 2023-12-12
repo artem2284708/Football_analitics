@@ -3,10 +3,10 @@ import streamlit as st
 import plotly.express as px
 
 
-df_players = pd.read_csv('/Users/artem2284708/Desktop/artem/Data files/players.csv')
-df_games = pd.read_csv('/Users/artem2284708/Desktop/artem/Data files/games.csv')
-df_clubs = pd.read_csv('/Users/artem2284708/Desktop/artem/Data files/clubs.csv')
-club_games = pd.read_csv("/Users/artem2284708/Desktop/artem/Data files/club_games.csv")
+df_players = pd.read_csv('Data files/players.csv')
+df_games = pd.read_csv('Data files/games.csv')
+df_clubs = pd.read_csv('Data files/clubs.csv')
+club_games = pd.read_csv("Data files/club_games.csv")
 
 matchdays = df_games[(df_games["round"].str.contains("Matchday"))]
 RPL_matchdays = matchdays[matchdays['competition_id'] == 'ES1']
