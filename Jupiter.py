@@ -39,4 +39,6 @@ club_games['points'] = club_games['is_win'].apply(calculate_points)
 club_seasons = club_games.groupby(["club_id", "season"], as_index=False)[['points']].sum()
 club_seasons = club_seasons.loc[club_seasons['season'] == 2023]
 club_seasons = pd.merge(df_clubs[['club_id', 'name']], club_seasons)
-club_seasons
+
+RPL_standings = club_seasons.pivot_table(index = 'name', values = 'points').sort_values(by = "points", ascending=False)
+RPL_standings
