@@ -35,3 +35,4 @@ standings = club_seasons.pivot_table(index = 'name', values = 'points').sort_val
 standings.reset_index()
 index_labels = (a for a in range(1, len(standings['name'])+1))
 standings.index = index_labels
+standings
