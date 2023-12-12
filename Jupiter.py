@@ -28,6 +28,7 @@ fig = px.bar(league_overview_1, x='current_club_name', y='market_value_in_eur',
              color='market_value_in_eur'
             )
 fig.update_xaxes(categoryorder='total descending', tickangle=-45)
+st.plotly_chart(fig)
 
 
 matchdays = df_games[(df_games["round"].str.contains("Matchday"))]
