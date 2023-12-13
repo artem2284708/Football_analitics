@@ -6,7 +6,7 @@ Project was created by **Tarasov Artem**
 
 ### Link to the project
 https://analyse-of-football-leage.streamlit.app/ - Streamlit <br>
-https://dsba-project-example.onrender.com/ - Flask example
+http://127.0.0.1:4708 - Flask example
 
 ### Data set: 
 https://www.kaggle.com/datasets/davidcariboo/player-scores
