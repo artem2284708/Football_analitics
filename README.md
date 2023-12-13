@@ -16,4 +16,4 @@ https://www.kaggle.com/datasets/davidcariboo/player-scores
 * Flask (Web Engine)
 * Pandas (Calculation)
 * Plotly (Complex graphs)
-* Heroku (Hosting) - it breaks down
+* Heroku (Hosting) - it broke down
