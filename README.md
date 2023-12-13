@@ -6,7 +6,7 @@ Project was created by **Tarasov Artem**
 
 ### Link to the project
 https://analyse-of-football-leage.streamlit.app/ - Streamlit <br>
-http://127.0.0.1:4708 - Flask example
+http://127.0.0.1:4708 - Flask example <br>
 [colab](https://colab.research.google.com/drive/1_9pfZW9-myZQqu_hsGURTil8g9Jwsk6f#scrollTo=M7nTnMRUemwV)
 
 ### Data set: 
