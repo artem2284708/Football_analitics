@@ -7,7 +7,7 @@ Project was created by **Tarasov Artem**
 ### Link to the project
 https://analyse-of-football-leage.streamlit.app/ - Streamlit <br>
 http://127.0.0.1:4708 - Flask example <br>
-[https://colab.research.google.com/)](https://colab.research.google.com/drive/1_9pfZW9-myZQqu_hsGURTil8g9Jwsk6f#scrollTo=M7nTnMRUemwV)
+[https://colab.research.google.com/](https://colab.research.google.com/drive/1_9pfZW9-myZQqu_hsGURTil8g9Jwsk6f#scrollTo=M7nTnMRUemwV) - Colab
 
 ### Data set: 
 https://www.kaggle.com/datasets/davidcariboo/player-scores
